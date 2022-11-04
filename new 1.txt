@@ -1,0 +1,48 @@
+# lab 3, zadanie 4, pkt 1
+create table przetwory (
+id_przetworu int primary key,
+rok_produkcji int(4) unsigned,
+id_wykonawcy int,
+zawartosc varchar(255),
+dodatek varchar(255) default 'papryczka chilli',
+id_konsumenta int,
+foreign key(id_wykonawcy) references postac(id_postaci),
+foreign key(id_konsumenta) references postac(id_postaci)
+);
+
+# lab 3, zadanie 4, pkt 2
+INSERT INTO przetwory VALUES(default, 2022,1,'bigos',default,3);
+
+# lab 3, zadanie 5
+2.
+create table statek (
+nazwa_statku int primary key,
+rodzaj_statku ENUM('statek_1', 'statek_2', 'statek_3'),
+data_wodowania DATE,
+max_ladownosc int(4)
+);
+
+3.
+INSERT INTO statek VALUES(1, 1, '1509-03-01', '255')
+INSERT INTO statek VALUES('2', 2, '1529-04-15', '255')
+
+4.
+ALTER TABLE postac ADD funkcja int(4);
+
+
+5.
+UPDATE postac SET bjron = 'kapitan' WHERE id_postaci = 1;
+
+6.
+a) ALTER TABLE postac ADD COLUMN statek;
+b) ALTER TABLE postac ADD FOREIGN KEY REFERENCES postac(statek);
+
+7.
+UPDATE postac SET  drozda = statek_1;
+UPDATE postac SET  wikingowie = statek_2;
+
+8.
+DELETE FROM izba WHERE izba='spizarnia';
+9.
+ DROP TABLE izba;
+
