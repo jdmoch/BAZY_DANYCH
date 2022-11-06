@@ -34,8 +34,8 @@ ALTER TABLE postac ADD funkcja int(4);
 UPDATE postac SET bjron = 'kapitan' WHERE id_postaci = 1;
 
 6.
-a) ALTER TABLE postac ADD COLUMN statek;
-b) ALTER TABLE postac ADD FOREIGN KEY REFERENCES postac(statek);
+a) Alter table postac add statek varchar(70);
+b) ALTER TABLE postac ADD FOREGIN KEY(statek) references statek(nazwa_statku);
 
 7.
 UPDATE postac SET  drozda = statek_1;
@@ -44,5 +44,5 @@ UPDATE postac SET  wikingowie = statek_2;
 8.
 DELETE FROM izba WHERE izba='spizarnia';
 9.
- DROP TABLE izba;
+DROP TABLE izba;
 
