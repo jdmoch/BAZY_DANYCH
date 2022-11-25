@@ -2,8 +2,14 @@
 
 1. create table kreatura
    select * from wikingowie.kreatura;
+   
+2. SELECT * from zasob;
+3. SELECT * from zasob WHERE rodzaj = 'jedzenie';
+4. SELECT 'idZasobu', 'ilosc' from zasob where idzasobu = 1 OR  idzasobu = 3 OR idzasobu = 5; 
 
-2. 
-
+2)
+1. SELECT * from kreatury where nazwa!= 'wiedzma' AND udzwig < 50kg;
+2. SELECT * from zasoby WHERE waga BETWEEN 2 and 5;
+3. SELECT * from kreatury WHERE nazwa LIKE %or% AND udzwig BETWEEN 30 and 70;
 
 #rozny od - !#, <>
