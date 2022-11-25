@@ -1,7 +1,13 @@
 1)
 
-1. create table kreatura
+1. create table kreatura AS
    select * from wikingowie.kreatura;
+   
+   create table zasob AS
+   select * from wikingowie.zasob;
+   
+   create table ekwipunek AS
+   select * from wikingowie.ekwipunek;
    
 2. SELECT * from zasob;
 3. SELECT * from zasob WHERE rodzaj = 'jedzenie';
