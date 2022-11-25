@@ -37,3 +37,23 @@ where nazwa like '%a%';
 b)
 update statek set max_ladownosc=max_ladownosc *0.7 where year(data_wodowania) between 1901 and 2000;
 
+c)
+
+4)
+a) ALTER TABLE postac modify rodzaj enum('123953','loko'); 
+
+b) create table marynarz like postac;
+   INSERT INTO marynarz select * from postac;
+
+c)
+   
+5)
+a)UPDATE marynarz SET statek = null; 
+b)DELETE FROM marynarz where nazwa = 'wiking';
+c)ALTER TABLE statki DROP 
+d)DROP table statek;
+e)CREATE TABLE zwierz(
+id primary key auto increment not null;
+nazwa varchar; 
+wiek int unsigned;);
+f)INSERT INTO zwierz select id_postaci, nazwa, wiek from postac where rodzaj in('wąż','ptak');
