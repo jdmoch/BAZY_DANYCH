@@ -1,0 +1,19 @@
+1)
+1. select avg(waga) from kreatura where rodzaj='wiking';
+2. select rodzaj, avg(waga), count(*) from kreatura group by rodzaj;
+3. SELECT avg(year(now())-year(dataUr)) as sredni_wiek from kreatura group by rodzaj;
+
+2)
+1. SELECT rodzaj, sum(waga*ilosc) from zasob group by rodzaj
+   lub
+   SELECT nazwa, rodzaj, sum(waga*ilosc) as waga from zasob group by nazwa, rodzaj with rollup order by rodzaj;
+2. SELECT rodzaj, avg(waga) from zasob where ilosc >= 4 group by nazwa having avg(waga) >10;
+3.SELECT rodzaj, count(nazwa) from zasob where ilosc > 1 group by rodzaj;
+
+3)
+1. select * from kreatura k innej join ekwipunek e innej join zasob z on z.idZasobu=e.idZasobu on k.idKreatury=e.idKreatury;
+3. select * from kreatura k left join ekwipunek e on k.idKreatury=e.idKreatury;
+
+4)
+1.
+2.
