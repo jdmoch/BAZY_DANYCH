@@ -16,5 +16,10 @@
 3. SELECT * from kreatura k left join ekwipunek e on k.idKreatury=e.idKreatury;
 
 4)
-1.SELECT k.nazwa, z.nazwa, dataUr  FROM wikingowie.zasob z INNER JOIN wikingowie.kreatura k INNER JOIN wikingowie.ekwipunek ON wikingowie.ekwipunek.idKreatury=k.idKreatury ON wikingowie.ekwipunek.idZasobu=z.idZasobu WHERE dataUr LIKE '167%';
-2.SELECT k.nazwa, z.nazwa FROM wikingowie.kreatura k inner join wikingowie.ekwipunek e inner join wikingowie.zasob  z ON wikingowie.z.idZasobu=wikingowie.e.idZasobu ON wikingowie.k.idKreatury=wikingowie.e.idKreatury;
+1. SELECT k.nazwa, z.nazwa, dataUr  FROM wikingowie.zasob z INNER JOIN wikingowie.kreatura k INNER JOIN wikingowie.ekwipunek ON wikingowie.ekwipunek.idKreatury=k.idKreatury ON wikingowie.ekwipunek.idZasobu=z.idZasobu WHERE dataUr LIKE '167%';
+2. SELECT k.nazwa, z.nazwa FROM wikingowie.kreatura k inner join wikingowie.ekwipunek e inner join wikingowie.zasob  z ON wikingowie.z.idZasobu=wikingowie.e.idZasobu ON wikingowie.k.idKreatury=wikingowie.e.idKreatury;
+3. SELECT CONCAT(k1.nazwa, ' - ',k2.nazwa) from kreatura k1 join kreatura k2 on k1.IdKreatury = k2.idKreatury WHERE k1.idKreatur ORDER BY ;
+
+5)
+1. SELECT k.nazwa, sum(e.ilosc*z.waga)/count(distinct(k.nazwa)) as srednia_waga from kreatura k join ekwipunek e on k.idKreatury=e.idkreatury join zasob z on e.idZasobu = z.idZasobu WHERE k.rodzaj not in ('malpa','waz') group by k.nazwa;
+2. SELECT k.nazwa. max(k.dataUr), min(k.dataUr) from kreatura k group by k.rodzaj
