@@ -22,4 +22,4 @@
 
 5)
 1. SELECT k.nazwa, sum(e.ilosc*z.waga)/count(distinct(k.nazwa)) as srednia_waga from kreatura k join ekwipunek e on k.idKreatury=e.idkreatury join zasob z on e.idZasobu = z.idZasobu WHERE k.rodzaj not in ('malpa','waz') group by k.nazwa;
-2. SELECT k.nazwa. max(k.dataUr), min(k.dataUr) from kreatura k group by k.rodzaj
+2. SELECT k.nazwa, k.rodzaj, k.dataUr from kreatura k, (select rodzaj, min(dataUr) as min, max(dataUr) as max from kreatura group by rodzaj) as pod where k.dataUr = pod.min or k.dataUr=pod.max and k.rodzaj=pod.rodzaj;
