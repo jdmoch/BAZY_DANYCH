@@ -7,4 +7,13 @@
 7. CREATE TABLE towary_full_info (SELECT t.nazwa_towaru, t.cena_zakupu, k.id_kategori as 'nazwa',sm.ilosc, sm.jm FROM __firma_zti.towar t JOIN __firma_zti.kategoria kON k.id_kategori=t.kategoria JOIN __firma_zti.stan_magazynowy sm ON sm.towar=t.id_towaru);
 8. SELECT * from pozycja_zamowienia pz inner join (select * from zamowienie order by data_zamowienia asc limit 5) as z on z.id_zamowienia=pz.zamowienie;
 9. SELECT z.* from zamowienie z join status_zamowienia sz on z.status_zamowienia=sz.id_statusu_zamowienia where sz.nazwa_statusu_zamowienia != 'zrealizowane';
-10. Select * from adres_klienta where kod not in (Select kod from adres_klienta where kod IS LIKE '__-___');
+10. select kod from adres_klienta
+where kod not like '__-___';
+
+select kod from adres_klienta
+where kod not regexp '[0-9]{2}-[0-9]{3}';
+
+# {n} - dokładnie n razy
+# {n,} - co najmniej n razy
+# {,n} - co najwyżej n razy
+# {n,m} - co najmniej n razy i nie więcej jak m razy
